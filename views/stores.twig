@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Fly Kicks Database</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Add A Store</h1>
+            {% if stores is not empty %}
+            <p>All shoe stores:</p>
+              <ul>
+                {% for store in stores %}
+                  <li><a href="/stores/{{ store.getId }}">{{ store.getStoreName }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            <form action='/stores' method='post'>
+                <label for='store_name'>Title:</label>
+                <input id='store_name' name='store_name' type='text'>
+
+              <!-- <label for='brand'>Brand:</label>
+              <input id='brand_name' name='brand_name' type='text'> -->
+
+
+              <button type='submit'>Add store to the database:</button>
+            </form>
+            <form action='/delete_stores' method='post'>
+              <button type='submit'>Delete all stores from the database(!!!)</button>
+            </form>
+
+            <p><a href='/'>Home</a></p>
+        </div>
+    </body>
+</html>

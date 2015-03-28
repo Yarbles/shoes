@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Fly Kicks Database</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    </head>
+        <body>
+          <div class='container'>
+              <h1>Fresh Brands</h1>
+
+              {% if brands is not empty %}
+              <p>All brands in the database:</p>
+              <ol>
+                  {% for brand in brands %}
+              <li><a href='/brands/{{ brand.getId }}'>{{ brand.getBrandName }} </a></li>
+              {% endfor %}
+             </ol>
+             {% endif %}
+
+             <form action='/brands' method='post'>
+                 <label for='brand_name'>Brand name:</label>
+                 <input id='brand_name' name='brand_name' type='text'>
+                 <button type='submit'>Add Brand</button>
+             </form>
+             <p><a href='/'>Home</a></p>
+         </div>
+     </body>
+</html>

@@ -25,10 +25,10 @@
             $id = 2;
             $test_brand_name = new Brand($brand_name, $id);
             //Act
-            $test_brand_name->setBrandName("Yarbles");
+            $test_brand_name->setBrandName("Nike");
             $result = $test_brand_name->getBrandName();
             //Assert
-            $this->assertEquals("Yarbles", $result);
+            $this->assertEquals("Nike", $result);
         }
 
         function test_setId()

@@ -55,6 +55,11 @@
             return $stores;
         }
 
+        static function deleteAll()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM stores*;");
+            $GLOBALS['DB']->exec("DELETE FROM stores_brands*;");
+        }
 
         static function find($search_id)
         {
@@ -67,12 +72,6 @@
                 }
             }
             return $found_store;
-        }
-
-        static function deleteAll()
-        {
-            $GLOBALS['DB']->exec("DELETE FROM stores*;");
-            $GLOBALS['DB']->exec("DELETE FROM stores_brands*;");
         }
 
         function updateStore($new_store)
@@ -91,8 +90,6 @@
         {
             $GLOBALS['DB']->exec("INSERT INTO stores_brands (store_id, brand_id) VALUES ({$this->getId()}, {$brand_name->getId()});");
         }
-
-
 
         function getBrands()
         {

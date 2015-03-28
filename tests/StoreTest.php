@@ -120,7 +120,7 @@
         }
 
 
-        function test_updateTitle()
+        function test_updateStoreName()
         {
             //Arrange
             $store_name = "Foot Locker";
@@ -134,7 +134,7 @@
             $this->assertEquals("MegaFoot", $test_store->getStoreName());
         }
 
-        function test_deleteBook()
+        function test_deleteStore()
         {
             //Arrange
             $store_name = "Foot Locker";
